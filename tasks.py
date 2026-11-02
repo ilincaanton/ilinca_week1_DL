@@ -13,9 +13,11 @@ import numpy
 # Your code here:
 # -----------------------------------------------
 
-def step
-
-
+def step(x):  
+   if x > 0:
+      return 1
+   else:
+       return -1
 # -----------------------------------------------
 
 
@@ -28,23 +30,23 @@ def step
 
 # Your code here:
 # -----------------------------------------------
-def ReLu
-
-
+def ReLu(A, cutoff = 0):
+    B = A.copy()
+    B[B < cutoff] = cutoff
+    return B
 # -----------------------------------------------
-
 
 # Task 3:
 # Instructions:
-#Write a function that takes in a two-dimensional numpy array of size (n, p) and a one-dimensional numpy array of size p.
-#The function should start by multiplying the two numpy arrays (matrix multiplication).
-#Next, apply the ReLu function from above to the resulting matrix and return the result.
-#Name the function neural_net_layer
+# Write a function that takes in a two-dimensional numpy array of size (n, p) and a one-dimensional numpy array of size p.
+# The function should start by multiplying the two numpy arrays (matrix multiplication).
+# Next, apply the ReLu function from above to the resulting matrix and return the result.
+# Name the function neural_net_layer
 
 # Your code here:
 # -----------------------------------------------
 
-def neural_net_layer
-
-
+def neural_net_layer(X, Y):
+    M = X @ Y
+    return ReLu(M)
 # ------------------------------------------
